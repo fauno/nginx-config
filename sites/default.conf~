@@ -1,0 +1,11 @@
+# Agarrar cualquier cosa que entre por un dominio desconocido
+# Útil para los bots que visitan automáticamente la IP con cualquier petición
+server {
+    listen 80 default;
+
+    root /srv/http/default;
+
+    location / {
+        rewrite .* /avatar.png break;
+    }
+}
