@@ -1,0 +1,13 @@
+#!/usr/bin/env bash
+
+if test ! -f /etc/mime.types ; then
+  echo "Hay que instalar el paquete mime-types"
+  exit
+fi
+
+{
+  echo "# $(date)"
+  echo "tipes {"
+    column -t /etc/mime.types | grep " " | sed "s/$/;/"
+  echo "}"
+} > mime.types
