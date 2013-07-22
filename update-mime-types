@@ -7,7 +7,7 @@ fi
 
 {
   echo "# $(date)"
-  echo "tipes {"
+  echo "types {"
     column -t /etc/mime.types | grep " " | sed "s/$/;/"
   echo "}"
 } > mime.types
