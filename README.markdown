@@ -1,4 +1,4 @@
-Configuración de nginx para hackcoop
+Configuración de nginx para hackcoop :)
 
 Técnica             | Sitio de ejemplo
 --------------------+------------------------------------
