@@ -1,0 +1,19 @@
+#!/usr/bin/env bash
+# Crea un sitio nuevo :)
+# # Planes
+# * Agregar snippets automáticamente
+# * Clonar de un repo
+# * Crear un usuario
+
+for site in $@; do
+  mkdir -pv /srv/http/${site}
+
+  if test ! -f /etc/nginx/sites/${site}.conf; then
+    cat >/etc/nginx/sites/${site}.conf <<EOS
+server {
+  server_name ${site};
+}
+EOS
+
+  fi
+done
