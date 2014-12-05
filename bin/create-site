@@ -5,8 +5,11 @@
 # * Clonar de un repo
 # * Crear un usuario
 
+user=$1; shift
+
 for site in $@; do
   mkdir -pv /srv/http/${site}
+  chown -R $user:http /srv/http/${site}
 
   if test ! -f /etc/nginx/sites/${site}.conf; then
     cat >/etc/nginx/sites/${site}.conf <<EOS
